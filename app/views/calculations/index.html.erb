@@ -1,0 +1,28 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold text-center mb-6">Mortgage Calculator</h1>
+  <%= form_with(url: '/calculate', method: :post, local: true, class: "max-w-xl mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4") do |form| %>
+    <div class="mb-4">
+      <%= form.label :loan_amount, "Loan Amount (£)", class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.text_field :loan_amount, placeholder: 'Enter loan amount', class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :interest_rate, "Annual Interest Rate (%)", class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.text_field :interest_rate, placeholder: 'Enter annual interest rate', class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :term, "Total Loan Term (years)", class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.number_field :term, placeholder: 'Enter total loan term', class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :period, "Fixed Period (years)", class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.number_field :period, placeholder: 'Enter fixed period', class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <%= form.submit "Calculate", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+  <% end %>
+</div>
